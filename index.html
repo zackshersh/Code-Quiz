@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id=titleBlock>
-        <h1>Coding Quiz</h1>
-        <p>In this coding quiz you will be given 4 multiple choice questions. You have 60 seconds to complete this but time will be subtracted if you get a question wrong.</p>
-        <button id=startButton>Start</button>
-    </div>
-    <div id=questionBlock style="display: none;">
-        <p id=timer>60 Seconds</p>
-        <h3 id=question></h3>
-        <div id=answers>
-            <button class=answerButton data-button=1></button>
-            <button class=answerButton data-button=2></button>
-            <button class=answerButton data-button=3></button>
-            <button class=answerButton data-button=4></button>
+
+    <div id=container>
+        <p id=timer style="display: none;">60 Seconds</p>
+        <div id=titleBlock>
+            <h1>Coding<br>Quiz</h1>
+            <p>In this coding quiz you will be given <span>4 multiple choice questions</span>. You have <span>60 seconds</span> to complete this but time will be subtracted if you get a question wrong.</p>
+            <button id=startButton>Start</button>
         </div>
-    </div>
-    <div id=gameOverBlock style="display: none">
-        <p id=timeUpP style="display: none;">Time's Up!</p>
-        <h3>Game Over</h3>
-        <p id=finalScore></p>
-        <form>
-            <label for="scoreInitials">Save Your Score</label>
-            <input id=scoreInitials type="text" placeholder="your initials">
-            <button id=scoreSubmit>Submit</button>
-        </form>
-        <div id=scoreBoard>
-            
+        <div id=questionBlock style="display: none;">
+
+            <h3 id=question></h3>
+            <div id=answers>
+                <button class=answerButton data-button=1></button>
+                <button class=answerButton data-button=2></button>
+                <button class=answerButton data-button=3></button>
+                <button class=answerButton data-button=4></button>
+            </div>
+        </div>
+        <div id=gameOverBlock style="display: none">
+            <p id=timeUpP style="display: none;">Time's Up!</p>
+            <h3>Game Over</h3>
+            <p id=finalScore></p>
+            <form>
+                <label for="scoreInitials">Save Your Score</label>
+                <input id=scoreInitials type="text" placeholder="your initials">
+                <button id=scoreSubmit>Submit</button>
+            </form>
+            <div id=scoreBoard>
+                <h3>Scoreboard</h3>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

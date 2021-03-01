@@ -11,6 +11,7 @@ function start(){
     titleBlock.style.display = "none";
     questionBlock.style.display = "block";
 
+    document.getElementById("timer").style.display = "block"
     timer();
     questions();
 
@@ -19,13 +20,13 @@ function start(){
 var timeLeft = 60;
 var timerEl = document.getElementById("timer");
 
-var timerInt
+var timerInt;
 
 function timer(){
-    var timerInt = setInterval(function(){
+    timerInt = setInterval(function(){
                         timeLeft--;
                         timerEl.textContent = timeLeft + " Seconds";
-
+                        console.log("timer running")
                         if (timeLeft < 0){
                             gameOver(true);
                         }
@@ -100,11 +101,20 @@ function gameOver(timesUp){
     document.getElementById("gameOverBlock").style.display = "block";
     clearInterval(timerInt);
 
-    document.getElementById("finalScore").textContent = numCorrect + "/4 correct"
+    document.getElementById("finalScore").textContent = numCorrect + "/4 correct";
+    document.getElementById("timer").style.display = "none"
+    drawScoreboard()
 }
 
 function drawScoreboard(){
-
+    var scoreboard = document.getElementById('scoreBoard');
+    var localEntries = JSON.parse(localStorage.getItem('entries'))
+    for (var i=0;i<localEntries.length;i+=2){
+        console.log("hey")
+        var score = document.createElement('p')
+        score.innerHTML = ((i/2)+1) + ". " + localEntries[i] + "..........." + localEntries[i+1] + "/4";
+        scoreboard.appendChild(score)
+    }
 }
 
 var submitScoreButton = document.getElementById("scoreSubmit")
