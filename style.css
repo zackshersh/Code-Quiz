@@ -125,6 +125,7 @@ span {
 form {
     margin: 10px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 form label {
@@ -136,10 +137,11 @@ form label {
 #scoreBoard {
     width: 100%;
     background-color: blue;
-    margin-top: 20px;
+    margin-top: 50px;
     color:rgb(233, 193, 199);
     border-radius: 10px;
-    padding: 10px
+    padding: 10px;
+    margin: 10px;
 }
 
 #scoreBoard p {
